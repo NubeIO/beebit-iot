@@ -12,15 +12,33 @@ Building on *Linux* is relatively straightforward. The below instructions are de
 sudo apt remove libopencv*
 ```
 
-1. Run the unified install script to install all dependencies and run the program
+[optional]
 ```bash
-sudo make deps && ./beetrack
+sudo make clean
+```
+1. install dependencies (note openCV will be build from source and will take some time) (this will be optimised to only include necessary modules)
+```bash
+sudo apt install libcurl4-openssl-dev build-essential libgtk2.0-dev
+./scripts/install_opencv.sh
+```
+2. build
+```bash
+sudo make deps
+```
+3. run
+```bash
+./beetrack
 ```
 
 #### Uninstallation
-If you'd like to uninstall the dependencies and tracker at any time, simply run;
+linux: (temporary - to be updated in script and add removal of opencv somehow lol)
 ```bash
-make clean
+sudo make clean
+```
+
+Pi:
+```bash
+sudo make clean
 ./scripts/install_opencv.sh uninstall
 ```
 

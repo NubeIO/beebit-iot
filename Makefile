@@ -46,12 +46,11 @@ depsPi:
 
 # The install target downloads all the weights and config files needed
 deps: pc
-	sh ./scripts/install_opencv.sh
 	mkdir dnn
 	wget https://pjreddie.com/media/files/yolov3-tiny.weights -O dnn/yolov3.weights
 	wget https://raw.githubusercontent.com/pjreddie/darknet/master/cfg/yolov3-tiny.cfg -O dnn/config.cfg
 
 .PHONY : clean
 clean:
-	rm -r beetrack ./dnn beebit.cfg
-	rm ./*.o
+	rm -f ./*.o
+	rm -rf ./beetrack ./dnn ./beebit.cfg
